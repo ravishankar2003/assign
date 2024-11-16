@@ -16,7 +16,7 @@ const Home = () => {
       const token = localStorage.getItem('accesstoken');
       try {
         dispatch(setloading(true));
-        const response = await fetch(`${import.meta.env.VITE_RENDER_ID}/api/user/getuser`, {
+        const response = await fetch(`https://assign-j9zq.onrender.com/api/user/getuser`, {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${token}`,
