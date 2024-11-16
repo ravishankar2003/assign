@@ -31,6 +31,7 @@ const LoginSignupBox = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
+      console.log(import.meta.env.VITE_RENDER_ID)
       const data = await response.json();
 
       if (!response.ok) throw new Error(data.message || 'Something went wrong');
