@@ -24,14 +24,13 @@ const LoginSignupBox = () => {
     e.preventDefault();
     try {
       const url = isSignup
-        ? `${import.meta.env.VITE_RENDER_ID}/api/auth/signup`
-        : `${import.meta.env.VITE_RENDER_ID}/api/auth/signin`;
+        ? `https://assign-j9zq.onrender.com/api/auth/signup`
+        : `https://assign-j9zq.onrender.com/api/auth/signin`;
       const response = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
-      console.log(import.meta.env.VITE_RENDER_ID)
       const data = await response.json();
 
       if (!response.ok) throw new Error(data.message || 'Something went wrong');

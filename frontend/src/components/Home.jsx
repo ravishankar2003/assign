@@ -48,7 +48,7 @@ const Home = () => {
   const fetchDataForCountry = async () => {
     try {
       const token = localStorage.getItem('accesstoken');
-      const response = await fetch(`${import.meta.env.VITE_RENDER_ID}/api/user/data`, {
+      const response = await fetch(`https://assign-j9zq.onrender.com/api/user/data`, {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -70,7 +70,7 @@ const Home = () => {
   const handleUpdateCountry = async () => {
     const token = localStorage.getItem('accesstoken');
     try {
-      const response = await fetch(`${import.meta.env.VITE_RENDER_ID}/api/user/country`, {
+      const response = await fetch(`https://assign-j9zq.onrender.com/api/user/country`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`,

@@ -17,7 +17,7 @@ const Admin = () => {
       const token = localStorage.getItem('accesstoken');
       try {
         dispatch(setloading(true));
-        const response = await fetch(`${import.meta.env.VITE_RENDER_ID}/api/user/getuser`, {
+        const response = await fetch(`https://assign-j9zq.onrender.com/api/user/getuser`, {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${token}`,
@@ -49,7 +49,7 @@ const Admin = () => {
   const fetchDataForCountry = async () => {
     try {
       const token = localStorage.getItem('accesstoken');
-      const response = await fetch(`${import.meta.env.VITE_RENDER_ID}/api/user/data`, {
+      const response = await fetch(`https://assign-j9zq.onrender.com/api/user/data`, {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -71,7 +71,7 @@ const Admin = () => {
   const handleUpdateCountry = async () => {
     const token = localStorage.getItem('accesstoken');
     try {
-      const response = await fetch(`${import.meta.env.VITE_RENDER_ID}/api/user/country`, {
+      const response = await fetch(`https://assign-j9zq.onrender.com/api/user/country`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -96,7 +96,7 @@ const Admin = () => {
   const handleDelete = async (id) => {
     const token = localStorage.getItem('accesstoken');
     try {
-      const response = await fetch(`${import.meta.env.VITE_RENDER_ID}/api/data/${id}`, {
+      const response = await fetch(`https://assign-j9zq.onrender.com/api/data/${id}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -117,7 +117,7 @@ const Admin = () => {
   const handleUpdate = async (id, updatedContent) => {
     const token = localStorage.getItem('accesstoken');
     try {
-      const response = await fetch(`${import.meta.env.VITE_RENDER_ID}/api/data/${id}`, {
+      const response = await fetch(`https://assign-j9zq.onrender.com/api/data/${id}`, {
         method: 'PUT',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -141,7 +141,7 @@ const Admin = () => {
   const handleAddNewData = async () => {
     const token = localStorage.getItem('accesstoken');
     try {
-      const response = await fetch(`${import.meta.env.VITE_RENDER_ID}/api/data`, {
+      const response = await fetch(`https://assign-j9zq.onrender.com/api/data`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`,
