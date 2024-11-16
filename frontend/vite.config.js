@@ -5,8 +5,9 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   build: {
+    base: '/',
     rollupOptions: {
-      external: ['module-name'] // Replace 'module-name' with the problematic module
+      external: ['module-name']
     }
   }
 })
