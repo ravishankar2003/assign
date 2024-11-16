@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   build: {
-    base: '/',
+    outDir: 'dist', 
     rollupOptions: {
       external: ['module-name']
     }
