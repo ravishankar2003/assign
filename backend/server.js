@@ -17,7 +17,7 @@ app.use(express.json())
 
 
 app.use(cors({
-  origin: 'https://ravishankar2003.github.io',
+  origin: true,
   credentials:true
 }));
 

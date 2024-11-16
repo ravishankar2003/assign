@@ -2,8 +2,7 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setUser, logout, setloading } from '../userslice';
 import { useNavigate } from 'react-router-dom';
-import dotenv from 'dotenv';
-dotenv.config();
+
 
 const LoginSignupBox = () => {
   const { currentuser, loading } = useSelector((state) => state.ass_user);
@@ -25,8 +24,8 @@ const LoginSignupBox = () => {
     e.preventDefault();
     try {
       const url = isSignup
-        ? `${process.env.RENDER_ID}/api/auth/signup`
-        : `${process.env.RENDER_ID}/api/auth/signin`;
+        ? `${import.meta.env.VITE_RENDER_ID}/api/auth/signup`
+        : `${import.meta.env.VITE_RENDER_ID}/api/auth/signin`;
       const response = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

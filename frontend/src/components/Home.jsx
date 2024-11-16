@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setUser, logout, setloading } from '../userslice';
-import dotenv from 'dotenv';
-dotenv.config();
+
 
 const Home = () => {
   const { currentuser, loading } = useSelector((state) => state.ass_user);
@@ -17,7 +16,7 @@ const Home = () => {
       const token = localStorage.getItem('accesstoken');
       try {
         dispatch(setloading(true));
-        const response = await fetch(`${process.env.RENDER_ID}/api/user/getuser`, {
+        const response = await fetch(`${import.meta.env.VITE_RENDER_ID}/api/user/getuser`, {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${token}`,
@@ -49,7 +48,7 @@ const Home = () => {
   const fetchDataForCountry = async () => {
     try {
       const token = localStorage.getItem('accesstoken');
-      const response = await fetch(`${process.env.RENDER_ID}/api/user/data`, {
+      const response = await fetch(`${import.meta.env.VITE_RENDER_ID}/api/user/data`, {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -71,7 +70,7 @@ const Home = () => {
   const handleUpdateCountry = async () => {
     const token = localStorage.getItem('accesstoken');
     try {
-      const response = await fetch(`${process.env.RENDER_ID}/api/user/country`, {
+      const response = await fetch(`${import.meta.env.VITE_RENDER_ID}/api/user/country`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`,
