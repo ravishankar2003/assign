@@ -23,8 +23,8 @@ const LoginSignupBox = () => {
     e.preventDefault();
     try {
       const url = isSignup
-        ? 'http://localhost:3000/api/auth/signup'
-        : 'http://localhost:3000/api/auth/signin';
+        ? 'https://assign-j9zq.onrender.com/api/auth/signup'
+        : 'https://assign-j9zq.onrender.com/api/auth/signin';
       const response = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

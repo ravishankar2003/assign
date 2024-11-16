@@ -15,7 +15,7 @@ const Home = () => {
       const token = localStorage.getItem('accesstoken');
       try {
         dispatch(setloading(true));
-        const response = await fetch('http://localhost:3000/api/user/getuser', {
+        const response = await fetch('https://assign-j9zq.onrender.com/api/user/getuser', {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${token}`,
@@ -47,7 +47,7 @@ const Home = () => {
   const fetchDataForCountry = async () => {
     try {
       const token = localStorage.getItem('accesstoken');
-      const response = await fetch(`http://localhost:3000/api/user/data`, {
+      const response = await fetch(`https://assign-j9zq.onrender.com/api/user/data`, {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -69,7 +69,7 @@ const Home = () => {
   const handleUpdateCountry = async () => {
     const token = localStorage.getItem('accesstoken');
     try {
-      const response = await fetch('http://localhost:3000/api/user/country', {
+      const response = await fetch('https://assign-j9zq.onrender.com/api/user/country', {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`,
